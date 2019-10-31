@@ -23,7 +23,7 @@ def open_app
 end
 
 ################################################################################
-#below codes for the options a user recieves at differen menus
+#below codes for thd e options a user recieves at differen menus
 
 def add_a_bottle_from_user_input
     bottle = Wine.new
