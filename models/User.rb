@@ -2,10 +2,16 @@ class User
 
     @@all = []
 
-    attr_accessor :cellar
+    attr_accessor :username, :cellar
 
-    def initialize
-        cellar = Cellar.new
+    def initialize(username)
+        @username = username
+        @cellar = Cellar.new
+        @cellar.user = self
         @@all << self
+    end
+
+    def self.all
+        @@all
     end
 end

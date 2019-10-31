@@ -2,15 +2,11 @@ class Cellar
 
     @@all = []
 
-    attr_accessor :bottles
+    attr_accessor :bottles, :user
 
     def initialize
         @bottles = []
         @@all << self
-    end
-
-    def add_to_cellar(bottle)
-        @bottles << bottle
     end
 
     def self.all
