@@ -1,8 +1,9 @@
 require "pry"
 
 require_relative "models/Wine.rb"
+require_relative "models/Cellar.rb"
 
-def open
+def open_app
     print "Hi! welcome to your wine cellar. "
     while true
         puts "What would you like to do?"
@@ -10,7 +11,7 @@ def open
         puts "\t2. See wines in your cellar"
         case (gets.chomp.to_s.downcase)
         when '1' , '1.'
-            add_a_bottle
+            add_a_bottle_from_user_input
         when '2', '2.'
             see_wines_in_cellar
         when 'q'
@@ -24,7 +25,7 @@ end
 ################################################################################
 #below codes for the options a user recieves at differen menus
 
-def add_a_bottle
+def add_a_bottle_from_user_input
     bottle = Wine.new
     bottle.brand = ask_for_brand
     bottle.quality = ask_for_quality
@@ -33,11 +34,14 @@ def add_a_bottle
     bottle.sour = ask_if_boolean("sour")
     bottle.bitter = ask_if_boolean("bitter")
     bottle.acidic = ask_if_boolean("acidic")
-
+    cellars.first.add_to_cellar(bottle)
 end
 
 def see_wines_in_cellar #TODO
-    puts "saw wine"
+    binding.pry
+    cellars.first.bottles.each {|bottle|
+        puts bottle
+    }
 end
 
 #################################################################################
@@ -98,4 +102,9 @@ end
 def gets_string_input
 end
 
-open
+def cellars
+    Cellar.all
+end
+
+cellar = Cellar.new
+open_app
