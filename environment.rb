@@ -1,0 +1,6 @@
+require 'pry'
+require_relative './models/Bottle.rb'
+require_relative './models/Cellar.rb'
+require_relative './models/Stash.rb'
+require_relative './models/Review.rb'
+require_relative './models/User.rb'
