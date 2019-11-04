@@ -12,7 +12,7 @@ class Cellar
     end
 
     def add_bottle(bottle)
-        bottle = Stash.new(self, bottle)
+        Stash.new(self, bottle)
     end
 
     def bottles

@@ -2,11 +2,25 @@ class Bottle
     attr_reader :brand, :color, :name
     @@all = []
 
+
+
     def initialize(brand, color, name)
-        @brand = brand
-        @color = color
-        @name = name
-        @@all << self
+            @brand = brand
+            @color = color
+            @name = name
+            @@all << self
+        end
+    end
+
+    def add_bottle(brand, color, name)
+        bottle_that_exists = @@all.find{|bottle|
+            bottle.name.downcase == name.downcase && bottle.color.downcase == color.downcase && bottle.brand.downcase == brand.downcase 
+        }
+        if bottle_exists
+            return bottle_that_exists
+        else
+            Bottle.new(brand, color, name)
+        end
     end
 
     def cellars
