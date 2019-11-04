@@ -17,9 +17,9 @@ class User
     end
 
     #Dont want to use in user, but proof of concept, Bottle.add_bottle handles the search method
-    # def add_bottle_by_brand_color_name(brand, color, name)
-    #     Bottle.add_bottle(brand, color, name)
-    # end
+    def add_bottle_by_brand_color_name(brand, color, name)
+        Bottle.add_bottle(brand, color, name)
+    end
 
     def add_bottle_to_cellar(cellar, bottle)
         cellar.add_bottle(bottle)
