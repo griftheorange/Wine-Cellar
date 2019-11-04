@@ -14,7 +14,9 @@ class Bottle
     end
 
     def users_reviewed
-        Review.all_hash_bottle_key[self]
+        Review.all_hash_bottle_key[self].map{|review|
+            review.user
+        }
     end
 
     def self.all

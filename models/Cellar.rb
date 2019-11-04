@@ -8,6 +8,7 @@ class Cellar
         @name = name
         @@all << self
         self.add_to_user_key(user)
+        Stash.all_hash_cellar_key[self] = []
     end
 
     def add_bottle(bottle)
