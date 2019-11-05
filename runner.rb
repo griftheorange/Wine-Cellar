@@ -19,14 +19,14 @@ party_city = griffin.open_new_cellar('Party City') #
 party_city_2 = griffin.open_new_cellar('Party City 2, Electric Boogaloo')
 wegmans = julia.open_new_cellar('Wegmans')
 
-party_city.add_bottle(moscato)
-party_city.add_bottle(vodka)
-party_city.add_bottle(lemonade)
-party_city_2.add_bottle(moscato)
-party_city_2.add_bottle(lemonade)
-party_city_2.add_bottle(rose)
+party_city.stash_bottle(moscato)
+party_city.stash_bottle(vodka)
+party_city.stash_bottle(lemonade)
+party_city_2.stash_bottle(moscato)
+party_city_2.stash_bottle(lemonade)
+party_city_2.stash_bottle(rose)
 
-wegmans.add_bottle(rose)
+wegmans.stash_bottle(rose)
 
 
 binding.pry
