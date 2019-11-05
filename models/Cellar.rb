@@ -15,7 +15,7 @@ class Cellar
     end
 
     #Adds a given bottle to this cellar by creating a 'Stash' object as a joiner
-    def add_bottle(bottle)
+    def stash_bottle(bottle)
         Stash.new(self, bottle)
     end
 

@@ -34,14 +34,17 @@ class Review
         end
     end
 
+    #Returns all Review objects
     def self.all
         @@all
     end
 
+    #returns user-key hash
     def self.all_hash_user_key
         @@all_hash_user_key
     end
 
+    #return bottle-key hash
     def self.all_hash_bottle_key
         @@all_hash_bottle_key
     end

@@ -4,6 +4,9 @@ attr_reader :cellar, :bottle
 @@all_hash_cellar_key = {}
 @@all_hash_bottle_key = {}
 
+#Initializes with cellar and bottle pointers
+#adds seld to all array and adds self to cellar and bottle keys
+#in appropriate hashes
 def initialize(cellar, bottle)
     @cellar = cellar
     @bottle = bottle
@@ -12,6 +15,7 @@ def initialize(cellar, bottle)
     @@all << self
 end
 
+#Facilitates initialization
 def add_to_cellar_key(cellar)
     if Stash.all_hash_cellar_key[cellar]
         Stash.all_hash_cellar_key[cellar] << self
@@ -20,6 +24,7 @@ def add_to_cellar_key(cellar)
     end
 end
 
+#Facilitates initialization
 def add_to_bottle_key(bottle)
     if Stash.all_hash_bottle_key[bottle]
         Stash.all_hash_bottle_key[bottle] << self
@@ -28,14 +33,17 @@ def add_to_bottle_key(bottle)
     end
 end
 
+#returns all Stash objects as array
 def self.all
     @@all
 end
 
+#returns cellar key hash
 def self.all_hash_cellar_key
     @@all_hash_cellar_key
 end
 
+#returns bottle key hash
 def self.all_hash_bottle_key
     @@all_hash_bottle_key
 end
