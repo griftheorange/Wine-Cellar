@@ -4,6 +4,9 @@ class Review
     @@all_hash_user_key = {}
     @@all_hash_bottle_key = {}
 
+    #initialized with a user pointer and bottle pointer, links two through itself
+    #Stores self in all array, and points user key to self and bottle key to self
+    #in hashes
     def initialize(user, bottle)
         @user = user
         @bottle = bottle
@@ -13,6 +16,7 @@ class Review
         @@all << self
     end
 
+    #Facilitates initializing the user key hash
     def add_to_user_key(user)
         if Review.all_hash_user_key[user]
             Review.all_hash_user_key[user] << self
@@ -21,6 +25,7 @@ class Review
         end
     end
 
+    #Facilitates initializing the bottle key hash
     def add_to_bottle_key(bottle)
         if Review.all_hash_bottle_key[bottle]
             Review.all_hash_bottle_key[bottle] << self

@@ -3,7 +3,7 @@ class User
     @@all = []
 
     def initialize(name, username)
-        @name = name
+        @name = name.downcase
         @username = username
         @@all << self
     end
